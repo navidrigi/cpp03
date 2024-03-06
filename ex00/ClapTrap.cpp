@@ -38,35 +38,45 @@ void    ClapTrap::attack(const std::string &target)
 				  << target
 				  << ", causing "
 				  << attackDamage_
-				  << " point(s) of damage"
+				  << " points of damage"
 				  << std::endl;
 		energyPoints_ -= 1;
 		std::cout << "\033[31m"
 				  << name_
-				  << "'s Remaining energyPoints: "
+				  << "'s remaining energyPoints: "
 				  << energyPoints_
 				  << std::endl
 				  << "\033[0m";
 	}
 	else
-		std::cout << name_
+		std::cout << "ClapTrap "
+				  << name_
 				  << " cannot attack anymore"
 				  << std::endl;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-	if (hitPoints_ > 0)
+	if (hitPoints_ == 0)
+		std::cout << "ClapTrap "
+				  << name_
+				  << " is already dead"
+				  << std::endl;
+	else
 	{
 		hitPoints_ -= amount;
+		if (hitPoints_ < 0)
+			hitPoints_ = 0;
 		std::cout << "ClapTrap "
 				  << name_
 				  << " takes "
 				  << amount
 				  << " damage, now he has "
 				  << hitPoints_
-				  << " hit points"
-				  << std::endl;
+				  << " hit points";
+		if (hitPoints_ == 0)
+			std::cout << " and is dead";
+		std::cout << std::endl;
 	}
 }
 
@@ -76,9 +86,11 @@ void    ClapTrap::beRepaired(unsigned int amount)
 	{
 		hitPoints_ += amount;
 		energyPoints_ -= 1;
-		std::cout << "ClapTrap repaired himself "
+		std::cout << "ClapTrap "
+				  << name_
+				  << " repaired himself "
 				  << amount
-				  << " point(s), now he has "
+				  << " points, now he has "
 				  << hitPoints_
 				  << " hit points"
 				  << std::endl;
@@ -90,7 +102,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 	std::cout << "\033[31m"
 			  << name_
-			  << "'s Remaining energyPoints: "
+			  << "'s remaining energyPoints: "
 			  << energyPoints_
 			  << std::endl
 			  << "\033[0m";

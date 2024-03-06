@@ -16,8 +16,8 @@ int main(void)
 	player1.attack(player2.getName());
 	player1.attack(player2.getName());
 	player1.attack(player2.getName());
-	player2.takeDamage(4);
 
+	player2.takeDamage(4);
 	player2.beRepaired(3);
 
 	return 0;

@@ -1,14 +1,14 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	FragTrap	player1("Asghar");
-	FragTrap	player2("Akbar");
+	DiamondTrap	player1("Asghar");
+	DiamondTrap	player2("Akbar");
 
 	std::cout << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		player1.attack("Akbar");
+		player1.ScavTrap::attack("Akbar");
 		player2.takeDamage(player1.getAttackDamage());
 		std::cout << std::endl;
 	}

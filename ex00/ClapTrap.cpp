@@ -25,7 +25,7 @@ ClapTrap    &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Default destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 void    ClapTrap::attack(const std::string &target)
@@ -122,3 +122,8 @@ std::string ClapTrap::getName()
 // {
 //     return energyPoints_;
 // }
+
+int	ClapTrap::getAttackDamage()
+{
+	return attackDamage_;
+}

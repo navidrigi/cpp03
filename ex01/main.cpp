@@ -1,37 +1,19 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap	player1("Asghar");
-	ClapTrap	player2("Akbar");
+	ScavTrap	player1("Asghar");
+	ScavTrap	player2("Akbar");
 
-	player1.attack(player2.getName()); // 1
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName()); // 11
+	for (int i = 0; i < 4; i++)
+	{
+		player1.attack("Akbar");
+		player2.takeDamage(player1.getAttackDamage());
+		std::cout << std::endl;
+	}
 
-	player2.takeDamage(4);
-	player2.takeDamage(1);
-	player2.takeDamage(2);
-	player2.takeDamage(1);
-	player2.beRepaired(3); // 1
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3);
-	player2.beRepaired(3); // 11
-
+	for (int i = 0; i < 11; i++)
+		player2.beRepaired(5);
+	player1.guardGate();
 	return 0;
 }

@@ -2,13 +2,13 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap's default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
-	: name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0)
+	: name_(name), hitPoints_(100), energyPoints_(50), attackDamage_(20)
 {
-	std::cout << "Non-default constructor called" << std::endl;
+	std::cout << "ClapTrap's non-default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -25,7 +25,7 @@ ClapTrap    &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Default destructor called" << std::endl;
+	std::cout << "ClapTrap's destructor called" << std::endl;
 }
 
 void    ClapTrap::attack(const std::string &target)
@@ -122,3 +122,8 @@ std::string ClapTrap::getName()
 // {
 //     return energyPoints_;
 // }
+
+int	ClapTrap::getAttackDamage()
+{
+	return attackDamage_;
+}

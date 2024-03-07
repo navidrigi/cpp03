@@ -6,7 +6,7 @@ ClapTrap::ClapTrap()
 }
 
 ClapTrap::ClapTrap(std::string name)
-	: name_(name), hitPoints_(100), energyPoints_(50), attackDamage_(20)
+	: name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0)
 {
 	std::cout << "ClapTrap's non-default constructor called" << std::endl;
 }
@@ -32,7 +32,7 @@ void    ClapTrap::attack(const std::string &target)
 {
 	if (hitPoints_ != 0 && energyPoints_ != 0)
 	{
-		std::cout << "ClapTrap "
+		std::cout << "ScavTrap "
 				  << name_
 				  << " attacks "
 				  << target
@@ -49,7 +49,7 @@ void    ClapTrap::attack(const std::string &target)
 				  << "\033[0m";
 	}
 	else
-		std::cout << "ClapTrap "
+		std::cout << "ScavTrap "
 				  << name_
 				  << " cannot attack anymore"
 				  << std::endl;
@@ -58,7 +58,7 @@ void    ClapTrap::attack(const std::string &target)
 void    ClapTrap::takeDamage(unsigned int amount)
 {
 	if (hitPoints_ == 0)
-		std::cout << "ClapTrap "
+		std::cout << "ScavTrap "
 				  << name_
 				  << " is already dead"
 				  << std::endl;
@@ -67,7 +67,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
 		hitPoints_ -= amount;
 		if (hitPoints_ < 0)
 			hitPoints_ = 0;
-		std::cout << "ClapTrap "
+		std::cout << "ScavTrap "
 				  << name_
 				  << " takes "
 				  << amount
@@ -86,7 +86,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
 	{
 		hitPoints_ += amount;
 		energyPoints_ -= 1;
-		std::cout << "ClapTrap "
+		std::cout << "ScavTrap "
 				  << name_
 				  << " repaired himself "
 				  << amount
@@ -96,7 +96,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
 				  << std::endl;
 	}
 	else
-		std::cout << "ClapTrap "
+		std::cout << "ScavTrap "
 				  << name_
 				  << " cannot be healed" << std::endl;
 

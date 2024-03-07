@@ -5,6 +5,7 @@ int main(void)
 	ScavTrap	player1("Asghar");
 	ScavTrap	player2("Akbar");
 
+	std::cout << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		player1.attack("Akbar");

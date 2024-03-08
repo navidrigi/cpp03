@@ -4,10 +4,10 @@
 
 class FragTrap : public ClapTrap
 {
-	private:
 	public:
 		FragTrap();
-		FragTrap(std::string);
+		FragTrap(std::string name);
+		FragTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
 		FragTrap(const FragTrap &other);
         FragTrap    &operator=(const FragTrap &other);
 		~FragTrap();

@@ -5,9 +5,10 @@ DiamondTrap::DiamondTrap()
 	std::cout << "DiamondTrap's default constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : name_(name)
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
 	std::cout << "DiamondTrap's non-default constructor called" << std::endl;
+	name_ = name;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
@@ -30,9 +31,9 @@ DiamondTrap::~DiamondTrap()
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "I am "
-			  << DiamondTrap::name_
+			  << name_
 			  << "in DiamondTrap class, and "
-			  << ClapTrap::name_
+			  << ClapTrap::getName()
 			  << " in ClapTrap class"
 			  << std::endl;
 }

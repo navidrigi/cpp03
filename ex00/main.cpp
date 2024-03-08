@@ -1,9 +1,9 @@
 #include "ClapTrap.hpp"
 
-int main(void)
+int	main(void)
 {
 	ClapTrap	player1("Asghar");
-	ClapTrap	player2("Akbar");
+	ClapTrap	player2("Akbar", 20, 10, 0);
 
 	for (int i = 0; i < 11; i++)
 	{

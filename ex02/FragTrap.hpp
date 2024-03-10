@@ -13,3 +13,5 @@ class FragTrap : public ClapTrap
 		~FragTrap();
 		void	highFivesGuys(void);
 };
+
+void	PrintPlayer(FragTrap &player);

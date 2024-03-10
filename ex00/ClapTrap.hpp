@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <string>
 
 class ClapTrap
 {
@@ -20,5 +21,7 @@ class ClapTrap
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 		std::string getName() const;
+		int			getHitPoints();
+		int			getEnergyPoints();
 		int			getAttackDamage();
 };

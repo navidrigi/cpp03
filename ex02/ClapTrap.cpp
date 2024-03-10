@@ -119,6 +119,15 @@ std::string	ClapTrap::getName() const
 	return name_;
 }
 
+int			ClapTrap::getHitPoints()
+{
+	return hitPoints_;
+}
+int			ClapTrap::getEnergyPoints()
+{
+	return energyPoints_;
+}
+
 int	ClapTrap::getAttackDamage()
 {
 	return attackDamage_;

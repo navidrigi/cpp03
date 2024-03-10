@@ -6,15 +6,9 @@ ClapTrap::ClapTrap()
 }
 
 ClapTrap::ClapTrap(std::string name)
-	: name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0)
+	: name_(name), hitPoints_(100), energyPoints_(100), attackDamage_(30)
 {
-	std::cout << "ClapTrap's constructor with 1 parameter called" << std::endl;
-}
-
-ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) :
-	name_(name), hitPoints_(hitPoints), energyPoints_(energyPoints), attackDamage_(attackDamage)
-{
-	std::cout << "ClapTrap's constructor with 4 parameters called" << std::endl;
+	std::cout << "ClapTrap's non-default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -22,7 +16,7 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	*this = other;
 }
 
-ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
+ClapTrap    &ClapTrap::operator=(const ClapTrap &other)
 {
 	if (this != &other)
 		*this = other;
@@ -34,7 +28,7 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap's destructor called" << std::endl;
 }
 
-void	ClapTrap::attack(const std::string &target)
+void    ClapTrap::attack(const std::string &target)
 {
 	if (hitPoints_ != 0 && energyPoints_ != 0)
 	{
@@ -61,7 +55,7 @@ void	ClapTrap::attack(const std::string &target)
 				  << std::endl;
 }
 
-void	ClapTrap::takeDamage(unsigned int amount)
+void    ClapTrap::takeDamage(unsigned int amount)
 {
 	if (hitPoints_ == 0)
 		std::cout << "ClapTrap "
@@ -86,7 +80,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 
-void	ClapTrap::beRepaired(unsigned int amount)
+void    ClapTrap::beRepaired(unsigned int amount)
 {
 	if (hitPoints_ != 0 && energyPoints_ != 0)
 	{
@@ -114,10 +108,20 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			  << "\033[0m";
 }
 
-std::string	ClapTrap::getName() const
+std::string ClapTrap::getName()
 {
 	return name_;
 }
+
+// int         ClapTrap::getHitPoints()
+// {
+//     return hitPoints_;
+// }
+
+// int         ClapTrap::getEnergyPoints()
+// {
+//     return energyPoints_;
+// }
 
 int	ClapTrap::getAttackDamage()
 {

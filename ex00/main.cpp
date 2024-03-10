@@ -1,24 +1,18 @@
 #include "ClapTrap.hpp"
 
-int main(void)
+int	main(void)
 {
 	ClapTrap	player1("Asghar");
-	ClapTrap	player2("Akbar");
+	ClapTrap	player2("Akbar", 20, 10, 0);
 
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player1.attack(player2.getName());
-	player2.takeDamage(4);
+	for (int i = 0; i < 11; i++)
+	{
+		player1.attack(player2.getName());
+		player2.takeDamage(player1.getAttackDamage());
+		std::cout << std::endl;
+	}
 
-	player2.beRepaired(3);
-
+	for (int i = 0; i < 11; i++)
+		player2.beRepaired(3);
 	return 0;
 }

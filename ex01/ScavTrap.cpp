@@ -10,13 +10,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 	std::cout << "ScavTrap's constructor with 1 parameter called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) :
-	ClapTrap(name, hitPoints, energyPoints, attackDamage)
+ScavTrap::ScavTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) : ClapTrap(name, hitPoints, energyPoints, attackDamage)
 {
 	std::cout << "ScavTrap's constructor with 4 parameter called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
 	*this = other;
 }
@@ -62,5 +61,16 @@ void	ScavTrap::attack(const std::string &target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "\033[36mScavTrap is in gate keeper mode now\033[0m" << std::endl;
+	std::cout << std::endl
+			  << "\033[36m---- ScavTrap is in Gate keeper mode now ----\033[0m"
+			  << std::endl
+			  << std::endl;
+}
+
+void	PrintPlayer(ScavTrap &player)
+{
+	std::cout << player.getName() << std::endl;
+	std::cout << player.getHitPoints() << std::endl;
+	std::cout << player.getEnergyPoints() << std::endl;
+	std::cout << player.getAttackDamage() << std::endl << std::endl;
 }

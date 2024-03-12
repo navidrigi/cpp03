@@ -5,12 +5,14 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap's default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0)
+ClapTrap::ClapTrap(std::string name)
+	: name_(name), hitPoints_(10), energyPoints_(10), attackDamage_(0)
 {
 	std::cout << "ClapTrap's constructor with 1 parameter called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) : name_(name), hitPoints_(hitPoints), energyPoints_(energyPoints), attackDamage_(attackDamage)
+ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage) :
+	name_(name), hitPoints_(hitPoints), energyPoints_(energyPoints), attackDamage_(attackDamage)
 {
 	std::cout << "ClapTrap's constructor with 4 parameters called" << std::endl;
 }
@@ -121,7 +123,6 @@ int			ClapTrap::getHitPoints()
 {
 	return hitPoints_;
 }
-
 int			ClapTrap::getEnergyPoints()
 {
 	return energyPoints_;
